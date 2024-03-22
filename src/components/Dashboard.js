@@ -1,9 +1,25 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Brand from "../assets/logo3.jpeg";
 import Signup from "./Signup";
-import Login from "./Login"; 
+import Login from "./Login";
+import Pic1 from "../assets/pexels-pixabay-50987 (1).jpg";
+import Pic2 from "../assets/logo2.jpeg";
+import Pic3 from "../assets/logo3.jpeg";
+import React, { useState, useEffect } from "react";
 
 export default function Dashboard() {
+  const [carouselIndex, setCarouselIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      // Increment the carousel index
+      setCarouselIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
+    }, 3000); // Change slide every 3 seconds
+
+    return () => {
+      clearInterval(interval); // Clean up the interval on component unmount
+    };
+  }, []);
   return (
     <div>
       <div>
@@ -79,6 +95,55 @@ export default function Dashboard() {
             </div>
           </div>
         </nav>
+      </div>
+      <div className="container">
+        <div
+          id="carouselExampleAutoplaying"
+          className="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div className="carousel-inner">
+            <div
+              className={`carousel-item ${carouselIndex === 0 ? "active" : ""}`}
+            >
+              <img src={Pic2} className="d-block w-100" alt="..." />
+            </div>
+            <div
+              className={`carousel-item ${carouselIndex === 1 ? "active" : ""}`}
+            >
+              <img src={Pic3} className="d-block w-100" alt="..." />
+            </div>
+            <div
+              className={`carousel-item ${carouselIndex === 2 ? "active" : ""}`}
+            >
+              <img src={Pic1} className="d-block w-100" alt="..." />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
   );
