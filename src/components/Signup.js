@@ -35,11 +35,17 @@ export default function Signup() {
           </div>
           <div className="col-md-4">
             <label for="title" className="form-label">
-              State
+              Title
             </label>
             <select id="title" className="form-select">
               <option selected>Select Title</option>
-              <option>...</option>
+              <option>Mr.</option>
+              <option>Mrs.</option>
+              <option>Ms.</option>
+              <option>Dr.</option>
+              <option>Prof.</option>
+              <option>Eng.</option>
+              <option>Other</option>
             </select>
           </div>
           <div className="col-8">
@@ -54,7 +60,10 @@ export default function Signup() {
             </label>
             <select id="maritalStatus" className="form-select">
               <option selected>Select Marital Status</option>
-              <option>...</option>
+              <option>Married</option>
+              <option>Divorced</option>
+              <option>Single</option>
+              <option>Other</option>
             </select>
           </div>
           <div className="col-8">
@@ -153,7 +162,12 @@ export default function Signup() {
             </label>
             <select id="wageFrequency" className="form-select">
               <option selected>Select Wage Frequency</option>
-              <option>...</option>
+              <option>Daily</option>
+              <option>Weekly</option>
+              <option>Fortnightly</option>
+              <option>Monthly</option>
+              <option>Quarterly</option>
+              <option>Other</option>
             </select>
           </div>
           <div className="col-md-4">
@@ -184,7 +198,14 @@ export default function Signup() {
             </label>
             <select id="expense" className="form-select">
               <option selected>Select Expenses</option>
-              <option>...</option>
+              <option>Subscriptions</option>
+              <option>Rentals</option>
+              <option>Utilities</option>
+              <option>Transportation</option>
+              <option>Medical</option>
+              <option>Childcare</option>
+              <option>Taxes</option>
+              <option>Other</option>
             </select>
           </div>
           <div className="col-md-6">
@@ -193,7 +214,14 @@ export default function Signup() {
             </label>
             <select id="benefit" className="form-select">
               <option selected>Select Benefits</option>
-              <option>...</option>
+              <option>Employment Benefits</option>
+              <option>Social Security Benefits</option>
+              <option>Retirement Benefits</option>
+              <option>Unemployment Benefits</option>
+              <option>Veterans Benefits</option>
+              <option>Child Support Benefits</option>
+              <option>Government Assistance</option>
+              <option>Other</option>
             </select>
           </div>
           <div>
@@ -255,7 +283,7 @@ export default function Signup() {
           </div>
           <div class="col-md-6">
             <label for="benefitDocument" class="form-label">
-              Benefit Documents
+              Benefits Documents
             </label>
             <input
               class="form-control"
