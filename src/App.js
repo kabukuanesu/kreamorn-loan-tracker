@@ -1,9 +1,9 @@
-import ApproveLoan from "./components/ApproveLoan";
+import DeclineLoan from "./components/DeclineLoan";
 
 function App() {
   return (
     <div className="App">
-      <ApproveLoan />
+      <DeclineLoan />
     </div>
   );
 }
