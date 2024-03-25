@@ -1,9 +1,10 @@
-import Client from "./components/Client";
+// import Admin from "./components/Admin";
+import AdminLogin from "./components/AdminLogin";
 
 function App() {
   return (
     <div className="App">
-      <Client />
+      <AdminLogin />
     </div>
   );
 }
