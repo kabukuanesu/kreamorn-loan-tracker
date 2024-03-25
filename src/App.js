@@ -1,9 +1,9 @@
-import Admin from "./components/Admin";
+import ApproveLoan from "./components/ApproveLoan";
 
 function App() {
   return (
     <div className="App">
-      <Admin />
+      <ApproveLoan />
     </div>
   );
 }
