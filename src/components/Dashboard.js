@@ -6,6 +6,7 @@ import Pic1 from "../assets/pexels-ben-mack-5707613.jpg";
 import Pic2 from "../assets/pexels-daniel-dan-7708815.jpg";
 import Pic3 from "../assets/pexels-ivan-babydov-7788004.jpg";
 import React, { useState, useEffect } from "react";
+import Admin from "./Admin";
 
 export default function Dashboard() {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -78,6 +79,11 @@ export default function Dashboard() {
                 <li className="nav-item">
                   <a className="nav-link" href={Signup}>
                     Signup
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href={Admin}>
+                    Admin
                   </a>
                 </li>
               </ul>
