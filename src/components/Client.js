@@ -87,7 +87,6 @@ export default function Client() {
       <div>
         <br />
         <br />
-        <br />
       </div>
       <div style={{ textAlign: "center" }}>
         <h3>
@@ -206,7 +205,7 @@ export default function Client() {
             style={{
               maxHeight: "500px",
               overflowY: "scroll",
-              marginTop: "70px",
+              marginTop: "30px",
               marginLeft: "250px",
               marginRight: "250px",
             }}
@@ -230,6 +229,58 @@ export default function Client() {
                 </tr>
               </tbody>
             </table>
+          </div>
+        </div>
+      </div>
+      <div>
+        <input className="form-check-input" type="checkbox" id="gridCheck" />
+        <label className="form-check-label" for="gridCheck">
+          I accept the Terms & Conditions mentioned in the above documents.
+        </label>
+      </div>
+      <div>
+        <h6>
+          After you review the above documents, please accept or reject the
+          approved loan.
+        </h6>
+        <div>
+          <div
+            className="btn-group"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="review"
+              autocomplete="off"
+            />
+            <label className="btn btn-outline-primary" for="review">
+              Review
+            </label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="accept"
+              autocomplete="off"
+            />
+            <label className="btn btn-outline-success" for="accept">
+              Accept
+            </label>
+
+            <input
+              type="radio"
+              className="btn-check"
+              name="btnradio"
+              id="reject"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-danger" for="reject">
+              Reject
+            </label>
           </div>
         </div>
       </div>

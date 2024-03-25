@@ -1,12 +1,11 @@
-// import Admin from "./components/Admin";
-// import AdminLogin from "./components/AdminLogin";
-// import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
+import Admin from "./components/Admin";
+import Signup from "./components/Signup";
+import Client from "./components/Client";
 
 function App() {
   return (
     <div className="App">
-      <Dashboard />
+      <Client />
     </div>
   );
 }

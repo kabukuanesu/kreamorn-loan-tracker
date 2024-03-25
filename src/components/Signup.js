@@ -224,6 +224,28 @@ export default function Signup() {
               <option>Other</option>
             </select>
           </div>
+          <div className="col-md-6">
+            <label for="loanAmount" className="form-label">
+              Loan Amount
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="loanAmount"
+              placeholder="Enter Amount To Be Borrowed"
+            />
+          </div>
+          <div className="col-md-6">
+            <label for="loanTenure" className="form-label">
+              Loan Tenure
+            </label>
+            <input
+              type="text"
+              className="form-control"
+              id="loanTenure"
+              placeholder="Enter Loan Tenure"
+            />
+          </div>
           <div>
             <br />
           </div>
