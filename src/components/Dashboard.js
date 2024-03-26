@@ -7,6 +7,7 @@ import Pic2 from "../assets/pexels-daniel-dan-7708815.jpg";
 import Pic3 from "../assets/pexels-ivan-babydov-7788004.jpg";
 import React, { useState, useEffect } from "react";
 import Admin from "./Admin";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
   const [carouselIndex, setCarouselIndex] = useState(0);
@@ -26,7 +27,7 @@ export default function Dashboard() {
       <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href={Dashboard}>
+            <Link className="navbar-brand" to="/">
               <img
                 src={Brand}
                 alt="Logo"
@@ -35,7 +36,7 @@ export default function Dashboard() {
                 className="d-inline-block align-text-top"
               />
               ` Kreamorn Loan Tracker
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -53,38 +54,34 @@ export default function Dashboard() {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    href={Dashboard}
-                  >
+                  <Link className="nav-link active" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Signup}>
+                  <Link className="nav-link" to="/signup">
                     Loan Application
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Login}>
+                  <Link className="nav-link" to="/login">
                     Track Loan
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Login}>
+                  <Link className="nav-link" to="/login">
                     Login
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Signup}>
+                  <Link className="nav-link" to="/signup">
                     Signup
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Admin}>
+                  <Link className="nav-link" to="/adminLogin">
                     Admin
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="d-flex" role="search">
@@ -160,7 +157,7 @@ export default function Dashboard() {
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
                     <h3 className="mb-xl-4 mb-lg-3 mb-4">Get Involved</h3>
-                    <p>
+                    <div>
                       <ul>
                         <li>
                           Click on <b>Loan Application</b> to apply for a loan
@@ -178,7 +175,7 @@ export default function Dashboard() {
                           exclusive benefits.
                         </li>
                       </ul>
-                    </p>
+                    </div>
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
