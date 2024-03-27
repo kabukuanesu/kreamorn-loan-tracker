@@ -7,13 +7,33 @@ export default function Signup() {
   const [currentPage, setCurrentPage] = useState(1);
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [personalPassword, setPersonalPassword] = useState("");
+
   const [formData, setFormData] = useState({
     personalPassword: null,
+    proofOfIdentity: null,
+    proofOfResidence: null,
+    bankStatement: null,
+    proofOfIncome: null,
+    benefitDocument: null,
+    employmentVerification: null,
+    collateralDocument: null,
+    otherDocument: null,
   });
-  const handleSubmit = () => {
-    console.log(formData);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = new FormData();
+    data.append("personalPassword", formData.personalPassword);
+    data.append("proofOfIdentity", formData.proofOfIdentity);
+    data.append("proofOfResidence", formData.proofOfResidence);
+    data.append("bankStatement", formData.bankStatement);
+    data.append("proofOfIncome", formData.proofOfIncome);
+    data.append("benefitDocument", formData.benefitDocument);
+    data.append("employmentVerification", formData.employmentVerification);
+    data.append("collateralDocument", formData.collateralDocument);
+    data.append("otherDocument", formData.otherDocument);
+
     axios
-      .post("http://localhost:5032/api/PersonalDetail", formData)
+      .post("http://localhost:5032/api/PersonalDetail", data)
       .then((response) => {
         // Handle successful submission
         console.log("Form submitted successfully!");
@@ -405,9 +425,11 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfIdentity"
-                value={formData.proofOfIdentity || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, proofOfIdentity: e.target.value })
+                  setFormData({
+                    ...formData,
+                    proofOfIdentity: e.target.files[0],
+                  })
                 }
                 multiple
               />
@@ -420,9 +442,11 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfResidence"
-                value={formData.proofOfResidence || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, proofOfResidence: e.target.value })
+                  setFormData({
+                    ...formData,
+                    proofOfResidence: e.target.files[0],
+                  })
                 }
                 multiple
               />
@@ -435,9 +459,8 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="bankStatement"
-                value={formData.bankStatement || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, bankStatement: e.target.value })
+                  setFormData({ ...formData, bankStatement: e.target.files[0] })
                 }
                 multiple
               />
@@ -450,9 +473,8 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfIncome"
-                value={formData.proofOfIncome || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, proofOfIncome: e.target.value })
+                  setFormData({ ...formData, proofOfIncome: e.target.files[0] })
                 }
                 multiple
               />
@@ -465,9 +487,11 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="benefitDocument"
-                value={formData.benefitDocument || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, benefitDocument: e.target.value })
+                  setFormData({
+                    ...formData,
+                    benefitDocument: e.target.files[0],
+                  })
                 }
                 multiple
               />
@@ -480,11 +504,10 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="employmentVerification"
-                value={formData.employmentVerification || ""}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    employmentVerification: e.target.value,
+                    employmentVerification: e.target.files[0],
                   })
                 }
                 multiple
@@ -498,11 +521,10 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="collateralDocument"
-                value={formData.collateralDocument || ""}
                 onChange={(e) =>
                   setFormData({
                     ...formData,
-                    collateralDocument: e.target.value,
+                    collateralDocument: e.target.files[0],
                   })
                 }
                 multiple
@@ -516,9 +538,8 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="otherDocument"
-                value={formData.otherDocument || ""}
                 onChange={(e) =>
-                  setFormData({ ...formData, otherDocument: e.target.value })
+                  setFormData({ ...formData, otherDocument: e.target.files[0] })
                 }
                 multiple
               />
@@ -595,11 +616,7 @@ export default function Signup() {
               </div>
             </div>
             <div className="col-12">
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleSubmit}
-              >
+              <button type="submit" className="btn btn-primary">
                 Submit
               </button>
             </div>
@@ -619,7 +636,11 @@ export default function Signup() {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <div className="container">
-        <form className="row g-3">
+        <form
+          className="row g-3"
+          onSubmit={handleSubmit}
+          encType="multipart/form-data"
+        >
           {renderFormFields()}
           <div>
             <br />
@@ -646,6 +667,7 @@ export default function Signup() {
           </div>
         </form>
       </div>
+      {console.log(formData)}
     </div>
   );
 }
