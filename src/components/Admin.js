@@ -105,11 +105,11 @@ export default function Admin() {
                 <caption>Loan Applications</caption>
                 <thead className="table-dark">
                   <tr>
+                    <th>ID</th>
                     <th>Full Name</th>
+                    <th>National ID</th>
                     <th>Physical Address</th>
                     <th>Email Address</th>
-                    <th>Work Number</th>
-                    <th>National ID</th>
                     <th>Employer</th>
                     <th>Job Title</th>
                     <th>Monthly Income</th>
@@ -120,11 +120,11 @@ export default function Admin() {
                 <tbody>
                   {data.map((personalDetail) => (
                     <tr key={personalDetail.personalDetailId}>
+                      <td>{personalDetail.personalDetailId}</td>
                       <td>{personalDetail.fullName}</td>
+                      <td>{personalDetail.nationalId}</td>
                       <td>{personalDetail.address}</td>
                       <td>{personalDetail.emailAddress}</td>
-                      <td>{personalDetail.workNumber}</td>
-                      <td>{personalDetail.nationalId}</td>
                       <td>{personalDetail.employer}</td>
                       <td>{personalDetail.jobTitle}</td>
                       <td>{personalDetail.monthlyIncome}</td>
