@@ -67,17 +67,11 @@ export default function ApproveLoan() {
             />
           </div>
           <div>
-            <br />
-          </div>
-          <div>
-            <h3>
+            <h5>
               <b>
                 <u>Upload Loan Documents</u>
               </b>
-            </h3>
-          </div>
-          <div>
-            <br />
+            </h5>
           </div>
           <div class="col-md-6">
             <label for="proofOfIdentity" class="form-label">

@@ -9,7 +9,24 @@ export default function Signup() {
   const [personalPassword, setPersonalPassword] = useState("");
 
   const [formData, setFormData] = useState({
-    personalPassword: null,
+    fullName: null,
+    title: null,
+    dateOfBirth: null,
+    maritalStatus: null,
+    address: null,
+    phoneNumber: null,
+    emailAddress: null,
+    workNumber: null,
+    nationalId: null,
+    employer: null,
+    jobTitle: null,
+    wageFrequency: null,
+    annualSalary: null,
+    monthlyIncome: null,
+    expense: null,
+    benefit: null,
+    loanAmount: null,
+    loanTenure: null,
     proofOfIdentity: null,
     proofOfResidence: null,
     bankStatement: null,
@@ -18,11 +35,29 @@ export default function Signup() {
     employmentVerification: null,
     collateralDocument: null,
     otherDocument: null,
+    personalPassword: null,
   });
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = new FormData();
-    data.append("personalPassword", formData.personalPassword);
+    data.append("fullName", formData.fullName);
+    data.append("title", formData.title);
+    data.append("dateOfBirth", formData.dateOfBirth);
+    data.append("maritalStatus", formData.maritalStatus);
+    data.append("address", formData.address);
+    data.append("phoneNumber", formData.phoneNumber);
+    data.append("emailAddress", formData.emailAddress);
+    data.append("workNumber", formData.workNumber);
+    data.append("nationalId", formData.nationalId);
+    data.append("employer", formData.employer);
+    data.append("jobTitle", formData.jobTitle);
+    data.append("wageFrequency", formData.wageFrequency);
+    data.append("annualSalary", formData.annualSalary);
+    data.append("monthlyIncome", formData.monthlyIncome);
+    data.append("expense", formData.expense);
+    data.append("benefit", formData.benefit);
+    data.append("loanAmount", formData.loanAmount);
+    data.append("loanTenure", formData.loanTenure);
     data.append("proofOfIdentity", formData.proofOfIdentity);
     data.append("proofOfResidence", formData.proofOfResidence);
     data.append("bankStatement", formData.bankStatement);
@@ -31,9 +66,14 @@ export default function Signup() {
     data.append("employmentVerification", formData.employmentVerification);
     data.append("collateralDocument", formData.collateralDocument);
     data.append("otherDocument", formData.otherDocument);
+    data.append("personalPassword", formData.personalPassword);
 
     axios
-      .post("http://localhost:5032/api/PersonalDetail", data)
+      .post("http://localhost:5032/api/PersonalDetail", data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
       .then((response) => {
         // Handle successful submission
         console.log("Form submitted successfully!");
@@ -176,7 +216,7 @@ export default function Signup() {
                 Email Address
               </label>
               <input
-                type="email"
+                type="text"
                 className="form-control"
                 id="emailAddress"
                 placeholder="Enter Your Email Address"
@@ -636,11 +676,7 @@ export default function Signup() {
       style={{ backgroundImage: `url(${backgroundImg})` }}
     >
       <div className="container">
-        <form
-          className="row g-3"
-          onSubmit={handleSubmit}
-          encType="multipart/form-data"
-        >
+        <form className="row g-3" onSubmit={handleSubmit}>
           {renderFormFields()}
           <div>
             <br />

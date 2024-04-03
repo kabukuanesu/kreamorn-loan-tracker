@@ -3,6 +3,7 @@ import backgroundImg from "../assets/pexels-gdtography-911738.jpg";
 import Brand from "../assets/logo3.jpeg";
 import Signup from "./Signup";
 import Login from "./Login";
+import { Link } from "react-router-dom";
 
 export default function Client() {
   const name = "Anesu";
@@ -42,23 +43,19 @@ export default function Client() {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a
-                    className="nav-link active"
-                    aria-current="page"
-                    href={Client}
-                  >
+                  <Link className="nav-link active" to="/">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Signup}>
+                  <Link className="nav-link" to="/signup">
                     New Loan Application
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href={Login}>
+                  <Link className="nav-link" to="/login">
                     Track Another Loan
-                  </a>
+                  </Link>
                 </li>
               </ul>
               <form className="d-flex" role="search">
@@ -214,31 +211,45 @@ export default function Client() {
               <caption>Check Your Email For The Above Documents.</caption>
               <thead className="table-dark">
                 <tr>
-                  <th>Name</th>
-                  <th>Department</th>
-                  <th>Extension</th>
-                  <th>Location</th>
+                  <th>Loan Approval Letter</th>
+                  <th>Disclosure Statements</th>
+                  <th>Repayment Schedule</th>
+                  <th>Contact Information</th>
+                  <th>Declination Letter</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td>Hello</td>
-                  <td>People</td>
-                  <td>Of</td>
-                  <td>Harare</td>
+                  <td>Letter.pdf</td>
+                  <td>Disclosure.pdf</td>
+                  <td>Repayment.pdf</td>
+                  <td>Contact.pdf</td>
+                  <td>Declination.pdf</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </div>
-      <div>
+      <div
+        style={{
+          textAlign: "center",
+          justifyContent: "center",
+          justifyItems: "center",
+        }}
+      >
         <input className="form-check-input" type="checkbox" id="gridCheck" />
         <label className="form-check-label" for="gridCheck">
           I accept the Terms & Conditions mentioned in the above documents.
         </label>
       </div>
-      <div>
+      <div
+        style={{
+          textAlign: "center",
+          justifyContent: "center",
+          justifyItems: "center",
+        }}
+      >
         <h6>
           After you review the above documents, please accept or reject the
           approved loan.

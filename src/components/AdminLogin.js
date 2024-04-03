@@ -1,8 +1,39 @@
 import "../css/style.css";
 import "../App.css";
 import Pic from "../assets/logo1.png";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
+  const navigate = useNavigate();
+  const [ecNumber, setEcNumber] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = () => {
+    const data = {
+      ecNumber: ecNumber,
+      password: password,
+    };
+
+    fetch("http://localhost:5032/api/AdminDetail/Authenticate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          navigate("/admin");
+        } else {
+          console.log("Authentication failed");
+        }
+      })
+      .catch((error) => {
+        console.log("Error occurred during authentication:", error);
+      });
+  };
+
   return (
     <div>
       <main>
@@ -13,9 +44,21 @@ export default function AdminLogin() {
           </div>
           <div className="colm-form">
             <div className="form-container">
-              <input type="text" placeholder="Email or EC Number" />
-              <input type="password" placeholder="Password" />
-              <button className="btn-login">Login</button>
+              <input
+                type="text"
+                placeholder="EC Number"
+                value={ecNumber}
+                onChange={(e) => setEcNumber(e.target.value)}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button className="btn-login" onClick={handleLogin}>
+                Login
+              </button>
               <a href="#">Forgot password?</a>
               <button className="btn-new">Home</button>
             </div>
