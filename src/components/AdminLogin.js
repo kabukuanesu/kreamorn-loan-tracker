@@ -2,7 +2,7 @@ import "../css/style.css";
 import "../App.css";
 import Pic from "../assets/logo1.png";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -60,7 +60,9 @@ export default function AdminLogin() {
                 Login
               </button>
               <a href="#">Forgot password?</a>
-              <button className="btn-new">Home</button>
+              <Link to="/">
+                <button className="btn-new">Home</button>
+              </Link>
             </div>
             <p>
               <a href="#">
