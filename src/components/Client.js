@@ -1,13 +1,97 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import backgroundImg from "../assets/pexels-gdtography-911738.jpg";
 import Brand from "../assets/logo3.jpeg";
-import Signup from "./Signup";
-import Login from "./Login";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 export default function Client() {
-  const name = "Anesu";
-  const ecNumber = "45645465";
+  const [nationalId, setNationalId] = useState("");
+  const [fullName, setFullName] = useState("");
+  const [approved, setApproved] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [isProcessed, setIsProcessed] = useState(false);
+  const [isAccepted, setIsAccepted] = useState(false);
+  const [isRejected, setIsRejected] = useState(false);
+  const fundedButtonRef = useRef();
+
+  useEffect(() => {
+    if (nationalId) {
+      fetchData();
+    }
+  }, [nationalId]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetchData();
+  };
+
+  const fetchData = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch(
+        `http://localhost:5032/api/LoanDetail/NationalId/${nationalId}`
+      );
+      const data = await response.json();
+      if (data.length > 0) {
+        setFullName(data[0].fullName);
+        setApproved(data[0].approved);
+        setIsProcessed(true);
+        document.getElementById("processed").click(); // Click on the 'processed' button
+        document.getElementById("notProcessed").classList.remove("active");
+        if (data[0].approved === "Yes") {
+          setIsAccepted(true);
+          setIsRejected(false);
+        } else {
+          setIsAccepted(false);
+          setIsRejected(true);
+        }
+      } else {
+        setFullName("");
+        setApproved("");
+        setIsProcessed(false);
+        document.getElementById("notProcessed").click(); // Click on the 'notProcessed' button
+        document.getElementById("notProcessed").classList.add("active");
+        setIsAccepted(false);
+        setIsRejected(false);
+      }
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+    setIsLoading(false);
+  };
+
+  const handleReview = () => {
+    document.getElementById("notFunded").checked = true;
+  };
+
+  const handleReject = () => {
+    document.getElementById("rejected").click();
+    document.getElementById("notFunded").click();
+    setIsAccepted(false);
+    setIsRejected(true);
+  };
+
+  const handleAccept = () => {
+    fundedButtonRef.current.click();
+    document.getElementById("notFunded").classList.add("active");
+    setIsAccepted(true);
+    setIsRejected(false);
+  };
+
+  const handleClickProcessed = () => {
+    if (!isProcessed) {
+      setIsProcessed(true);
+      document.getElementById("notProcessed").classList.remove("active");
+    }
+  };
+
+  const handleClickNotProcessed = () => {
+    if (isProcessed) {
+      setIsProcessed(false);
+      document.getElementById("notProcessed").classList.add("active");
+    }
+  };
+
   return (
     <div
       className="overflow-auto custom-background"
@@ -58,15 +142,17 @@ export default function Client() {
                   </Link>
                 </li>
               </ul>
-              <form className="d-flex" role="search">
+              <form className="d-flex" role="search" onSubmit={handleSubmit}>
                 <input
                   className="form-control me-2"
                   type="search"
-                  placeholder="Feedback on experience"
+                  placeholder="Enter National ID"
                   aria-label="Search"
+                  value={nationalId}
+                  onChange={(e) => setNationalId(e.target.value)}
                 />
                 <button className="btn btn-outline-success" type="submit">
-                  Post
+                  Enter
                 </button>
               </form>
             </div>
@@ -86,9 +172,7 @@ export default function Client() {
         <br />
       </div>
       <div style={{ textAlign: "center" }}>
-        <h3>
-          {name} {ecNumber} Application Status
-        </h3>
+        <h3> {fullName} Application Status</h3>
       </div>
       <div>
         <br />
@@ -103,40 +187,48 @@ export default function Client() {
           <input
             type="checkbox"
             className="btn-check"
-            id="btncheck1"
+            id="submitted"
             autocomplete="off"
+            defaultChecked
           />
-          <label className="btn btn-outline-primary" for="btncheck1">
+          <label className="btn btn-outline-primary" htmlFor="submitted">
             &#128077; Submitted
           </label>
 
           <input
             type="checkbox"
             className="btn-check"
-            id="btncheck2"
-            autocomplete="off"
+            id="processed"
+            autoComplete="off"
+            disabled={!isProcessed}
+            onClick={handleClickProcessed}
           />
-          <label className="btn btn-outline-primary" for="btncheck2">
+          <label className="btn btn-outline-primary" htmlFor="processed">
             &#128077; Processed
           </label>
 
           <input
             type="checkbox"
             className="btn-check"
-            id="btncheck3"
-            autocomplete="off"
+            id="accepted"
+            autoComplete="off"
+            disabled={!isProcessed || isRejected}
+            checked={isAccepted}
+            onClick={handleAccept}
           />
-          <label className="btn btn-outline-primary" for="btncheck3">
+          <label className="btn btn-outline-primary" htmlFor="accepted">
             &#128077; Accepted
           </label>
 
           <input
             type="checkbox"
             className="btn-check"
-            id="btncheck4"
+            id="funded"
             autocomplete="off"
+            onClick={() => {}}
+            ref={fundedButtonRef}
           />
-          <label className="btn btn-outline-primary" for="btncheck4">
+          <label className="btn btn-outline-primary" htmlFor="funded">
             &#128077; Funded
           </label>
         </div>
@@ -151,44 +243,49 @@ export default function Client() {
             type="radio"
             className="btn-check"
             name="vbtn-radio"
-            id="vbtn-radio1"
+            id="notSubmitted"
             autocomplete="off"
           />
-          <label className="btn btn-outline-danger" for="vbtn-radio1">
-            &#128078; Submitted
+          <label className="btn btn-outline-danger" htmlFor="notSubmitted">
+            Not Submitted
           </label>
 
           <input
             type="radio"
             className="btn-check"
             name="vbtn-radio"
-            id="vbtn-radio2"
-            autocomplete="off"
+            id="notProcessed"
+            autoComplete="off"
+            disabled={isProcessed}
+            onClick={handleClickNotProcessed}
           />
-          <label className="btn btn-outline-danger" for="vbtn-radio2">
-            &#128078; Processed
+          <label className="btn btn-outline-danger" htmlFor="notProcessed">
+            Not Processed
           </label>
 
           <input
-            type="radio"
+            type="checkbox"
             className="btn-check"
-            name="vbtn-radio"
-            id="vbtn-radio3"
-            autocomplete="off"
+            id="rejected"
+            autoComplete="off"
+            disabled={!isProcessed || isAccepted}
+            checked={isRejected}
+            onClick={handleReject}
           />
-          <label className="btn btn-outline-danger" for="vbtn-radio3">
+          <label className="btn btn-outline-danger" htmlFor="rejected">
             &#128078; Rejected
           </label>
 
           <input
-            type="radio"
+            type="checkbox"
             className="btn-check"
-            name="vbtn-radio"
-            id="vbtn-radio4"
-            autocomplete="off"
+            id="notFunded"
+            autoComplete="off"
+            checked={isRejected}
+            onClick={handleReject}
           />
-          <label className="btn btn-outline-danger" for="vbtn-radio4">
-            &#128078; Funded
+          <label className="btn btn-outline-danger" htmlFor="notFunded">
+            Not Funded
           </label>
         </div>
       </div>
@@ -239,7 +336,7 @@ export default function Client() {
         }}
       >
         <input className="form-check-input" type="checkbox" id="gridCheck" />
-        <label className="form-check-label" for="gridCheck">
+        <label className="form-check-label" htmlFor="gridCheck">
           I accept the Terms & Conditions mentioned in the above documents.
         </label>
       </div>
@@ -255,44 +352,37 @@ export default function Client() {
           approved loan.
         </h6>
         <div>
-          <div
-            className="btn-group"
-            role="group"
-            aria-label="Basic radio toggle button group"
-          >
-            <input
-              type="radio"
-              className="btn-check"
-              name="btnradio"
-              id="review"
-              autocomplete="off"
-            />
-            <label className="btn btn-outline-primary" for="review">
-              Review
-            </label>
-
-            <input
-              type="radio"
-              className="btn-check"
-              name="btnradio"
-              id="accept"
-              autocomplete="off"
-            />
-            <label className="btn btn-outline-success" for="accept">
-              Accept
-            </label>
-
-            <input
-              type="radio"
-              className="btn-check"
-              name="btnradio"
-              id="reject"
-              autocomplete="off"
-            />
-            <label class="btn btn-outline-danger" for="reject">
-              Reject
-            </label>
-          </div>
+          {approved === "Yes" ? (
+            <div>
+              <input
+                type="checkbox"
+                className="btn-check"
+                id="acceptButton" // Update the id to "acceptButton"
+                autoComplete="off"
+                disabled={!isProcessed || isRejected}
+                checked={isAccepted}
+                onClick={handleAccept}
+              />
+              <label className="btn btn-outline-primary" htmlFor="acceptButton">
+                Accept
+              </label>
+              <button
+                id="reject"
+                className="btn btn-outline-danger"
+                onClick={handleReject}
+              >
+                Reject
+              </button>
+            </div>
+          ) : (
+            <div>
+              <Link to="/signup">
+                <button id="review" className="btn btn-outline-warning">
+                  Review
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
       <div>
