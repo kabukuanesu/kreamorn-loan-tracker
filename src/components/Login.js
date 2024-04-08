@@ -3,11 +3,14 @@ import "../App.css";
 import Pic from "../assets/logo1.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Toast } from "react-bootstrap";
 
 export default function Login() {
   const navigate = useNavigate();
   const [emailAddress, setEmailAddress] = useState("");
   const [password, setPassword] = useState("");
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
   const handleLogin = () => {
     const data = {
       emailAddress: emailAddress,
@@ -24,8 +27,10 @@ export default function Login() {
       .then((response) => {
         if (response.ok) {
           navigate("/client");
+          setShowSuccessToast(true);
         } else {
           console.log("Authentication failed");
+          setShowErrorToast(true);
         }
       })
       .catch((error) => {
@@ -34,6 +39,29 @@ export default function Login() {
   };
   return (
     <div>
+      <div>
+        <Toast
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          delay={3000}
+          autohide
+          bg="success"
+          text="light"
+        >
+          <Toast.Body>Login Successful!</Toast.Body>
+        </Toast>
+
+        <Toast
+          show={showErrorToast}
+          onClose={() => setShowErrorToast(false)}
+          delay={3000}
+          autohide
+          bg="danger"
+          text="light"
+        >
+          <Toast.Body>Wrong Username or Password</Toast.Body>
+        </Toast>
+      </div>
       <main>
         <div className="row">
           <div className="colm-logo">

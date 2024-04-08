@@ -2,11 +2,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import backgroundImg from "../assets/pexels-pixabay-534229.jpg";
 import React, { useState } from "react";
 import axios from "axios";
+import { Toast } from "react-bootstrap";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Signup() {
   const [currentPage, setCurrentPage] = useState(1);
   const [confirmPassword, setConfirmPassword] = useState(null);
   const [personalPassword, setPersonalPassword] = useState("");
+  const [showSuccessToast, setShowSuccessToast] = useState(false);
+  const [showErrorToast, setShowErrorToast] = useState(false);
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     fullName: null,
@@ -77,11 +82,17 @@ export default function Signup() {
       .then((response) => {
         // Handle successful submission
         console.log("Form submitted successfully!");
+        setShowSuccessToast(true);
+
+        navigate("/login");
       })
       .catch((error) => {
         // Handle error
         console.error("Error submitting form:", error);
+        setShowErrorToast(true);
       });
+
+    navigate("/login");
   };
 
   const handleNextPage = () => {
@@ -671,39 +682,64 @@ export default function Signup() {
   };
 
   return (
-    <div
-      className="overflow-auto custom-background"
-      style={{ backgroundImage: `url(${backgroundImg})` }}
-    >
-      <div className="container">
-        <form className="row g-3" onSubmit={handleSubmit}>
-          {renderFormFields()}
-          <div>
-            <br />
-          </div>
-          <div>
-            {currentPage !== 1 && (
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handlePreviousPage}
-              >
-                Previous
-              </button>
-            )}
-            {currentPage !== 4 && (
-              <button
-                type="button"
-                className="btn btn-primary"
-                onClick={handleNextPage}
-              >
-                Next
-              </button>
-            )}
-          </div>
-        </form>
+    <>
+      <div>
+        <Toast
+          show={showSuccessToast}
+          onClose={() => setShowSuccessToast(false)}
+          delay={3000}
+          autohide
+          bg="success"
+          text="light"
+        >
+          <Toast.Body>Saved Successfully!</Toast.Body>
+        </Toast>
+
+        <Toast
+          show={showErrorToast}
+          onClose={() => setShowErrorToast(false)}
+          delay={3000}
+          autohide
+          bg="danger"
+          text="light"
+        >
+          <Toast.Body>Error in submitting the form</Toast.Body>
+        </Toast>
       </div>
-      {console.log(formData)}
-    </div>
+      <div
+        className="overflow-auto custom-background"
+        style={{ backgroundImage: `url(${backgroundImg})` }}
+      >
+        <div className="container">
+          <form className="row g-3" onSubmit={handleSubmit}>
+            {renderFormFields()}
+            <div>
+              <br />
+            </div>
+            <div>
+              {currentPage !== 1 && (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handlePreviousPage}
+                >
+                  Previous
+                </button>
+              )}
+              {currentPage !== 4 && (
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onClick={handleNextPage}
+                >
+                  Next
+                </button>
+              )}
+            </div>
+          </form>
+        </div>
+        {console.log(formData)}
+      </div>
+    </>
   );
 }
