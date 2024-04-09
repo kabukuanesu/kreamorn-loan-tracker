@@ -1,12 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Brand from "../assets/logo3.jpeg";
-import Signup from "./Signup";
-import Login from "./Login";
-import Pic1 from "../assets/pexels-ben-mack-5707613.jpg";
-import Pic2 from "../assets/pexels-daniel-dan-7708815.jpg";
-import Pic3 from "../assets/pexels-ivan-babydov-7788004.jpg";
+import Brand from "../assets/brand.jpeg";
+import background1 from "../assets/dashboard1.jpg";
+import background2 from "../assets/dashboard2.jpg";
+import background3 from "../assets/dashboard3.jpg";
 import React, { useState, useEffect } from "react";
-import Admin from "./Admin";
 import { Link } from "react-router-dom";
 
 export default function Dashboard() {
@@ -16,7 +13,7 @@ export default function Dashboard() {
     const interval = setInterval(() => {
       // Increment the carousel index
       setCarouselIndex((prevIndex) => (prevIndex === 2 ? 0 : prevIndex + 1));
-    }, 4000); // Change slide every 4 seconds
+    }, 3000); // Change slide every 4 seconds
 
     return () => {
       clearInterval(interval); // Clean up the interval on component unmount
@@ -109,17 +106,17 @@ export default function Dashboard() {
             <div
               className={`carousel-item ${carouselIndex === 0 ? "active" : ""}`}
             >
-              <img src={Pic2} className="d-block w-100" alt="..." />
+              <img src={background1} className="d-block w-100" alt="..." />
             </div>
             <div
               className={`carousel-item ${carouselIndex === 1 ? "active" : ""}`}
             >
-              <img src={Pic3} className="d-block w-100" alt="..." />
+              <img src={background2} className="d-block w-100" alt="..." />
             </div>
             <div
               className={`carousel-item ${carouselIndex === 2 ? "active" : ""}`}
             >
-              <img src={Pic1} className="d-block w-100" alt="..." />
+              <img src={background3} className="d-block w-100" alt="..." />
             </div>
           </div>
           <button
@@ -159,18 +156,18 @@ export default function Dashboard() {
                     <h3 className="mb-xl-4 mb-lg-3 mb-4">Get Involved</h3>
                     <div>
                       <ul>
-                        <li>
+                        <li style={{ fontSize: "13px" }}>
                           Click on <b>Loan Application</b> to apply for a loan
                           with us.
                         </li>
-                        <li>
+                        <li style={{ fontSize: "13px" }}>
                           Track your loan progress by clicking on the{" "}
                           <b>Track Loan</b> link above.
                         </li>
-                        <li>
+                        <li style={{ fontSize: "13px" }}>
                           <b>Login</b> to view your loan progress.
                         </li>
-                        <li>
+                        <li style={{ fontSize: "13px" }}>
                           <b>Signup</b> to apply a loan with us and enjoy our
                           exclusive benefits.
                         </li>
@@ -179,38 +176,50 @@ export default function Dashboard() {
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Our Mission</h3>
+                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Mission</h3>
                     <p>
-                      Our mission is to support financial growth and prosperity
-                      by offering responsible lending solutions. With
-                      personalized service and innovative approaches, we strive
-                      to be a trusted partner in achieving your financial goals.
+                      <ul>
+                        <li style={{ fontSize: "15px" }}>
+                          To attain maximum stakeholder value through offering
+                          innovative financial solutions anchored on mutual
+                          partnerships
+                        </li>
+                      </ul>
                     </p>
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Our Vision</h3>
+                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Vision</h3>
                     <p>
-                      To be the leading provider of innovative lending
-                      solutions, setting new standards in customer-centric
-                      banking. We envision a future where individuals and
-                      businesses have seamless access to the financial resources
-                      they need to thrive, backed by cutting-edge technology and
-                      exceptional service.
+                      <ul>
+                        <li style={{ fontSize: "15px" }}>
+                          To be preffered global financial solutions provider
+                        </li>
+                      </ul>
                     </p>
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Overview</h3>
+                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Values</h3>
                     <p>
-                      Our bank is committed to providing comprehensive lending
-                      services to individuals and businesses. We strive to
-                      deliver innovative solutions that meet the diverse
-                      financial needs of our customers. With a customer-centric
-                      approach, advanced technology, and a dedication to
-                      financial empowerment, we aim to be a trusted partner in
-                      helping our clients achieve their goals and contribute to
-                      their long-term success.
+                      <ul>
+                        <li style={{ fontSize: "14px" }}>
+                          Dedicated to achieve the Kreamorn dream
+                        </li>
+                        <li style={{ fontSize: "14px" }}>
+                          Honest & upright in all dealings
+                        </li>
+                        <li style={{ fontSize: "14px" }}>
+                          High competence & skill to become the authorities in
+                          the MFI industry
+                        </li>
+                        <li style={{ fontSize: "14px" }}>
+                          Oneness in our diversity to achieve a common goal
+                        </li>
+                        <li style={{ fontSize: "14px" }}>
+                          Eminence, exceeding expectations
+                        </li>
+                      </ul>
                     </p>
                   </div>
                 </div>

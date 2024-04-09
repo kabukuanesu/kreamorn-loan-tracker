@@ -1,8 +1,8 @@
 import "../css/style.css";
 import "../App.css";
-import Pic from "../assets/logo1.png";
+import logo from "../assets/login.png";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Toast } from "react-bootstrap";
 
 export default function Login() {
@@ -65,8 +65,8 @@ export default function Login() {
       <main>
         <div className="row">
           <div className="colm-logo">
-            <img src={Pic} />
-            <h2>Empowering Dreams, One Affordable Loan at a Time.</h2>
+            <img src={logo} />
+            <h2>Let us lend you a helping hand.</h2>
           </div>
           <div className="colm-form">
             <div className="form-container">
@@ -87,13 +87,15 @@ export default function Login() {
               <button className="btn-login" onClick={handleLogin}>
                 Login
               </button>
-              <a href="#">Forgot password?</a>
-              <button className="btn-new">Apply For A New Loan</button>
+              <Link to="/">Forgot password?</Link>
+              <Link to="/signup">
+                <button className="btn-new">Apply For A New Loan</button>
+              </Link>
             </div>
             <p>
-              <a href="#">
+              <Link to="/signup">
                 <b>Apply Now</b>
-              </a>{" "}
+              </Link>{" "}
               To Unlock Opportunities & Empower Finances.
             </p>
           </div>
@@ -104,25 +106,25 @@ export default function Login() {
           <ul>
             <li>English (US)</li>
             <li>
-              <a href="#">Chinese</a>
+              <Link to="#">Chinese</Link>
             </li>
             <li>
-              <a href="#">Portuguese (Brazil)</a>
+              <Link to="#">Portuguese (Brazil)</Link>
             </li>
             <li>
-              <a href="#">Korean</a>
+              <Link to="#">Korean</Link>
             </li>
             <li>
-              <a href="#">Espanol</a>
+              <Link to="#">Espanol</Link>
             </li>
             <li>
-              <a href="#">Bahasa (Indonesia)</a>
+              <Link to="#">Bahasa (Indonesia)</Link>
             </li>
             <li>
-              <a href="#">Francais (France)</a>
+              <Link to="#">Francais (France)</Link>
             </li>
             <li>
-              <a href="#">Deutsch</a>
+              <Link to="#">Deutsch</Link>
             </li>
             <li>
               <button>+</button>

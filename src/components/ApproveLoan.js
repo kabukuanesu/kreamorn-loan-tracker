@@ -1,5 +1,4 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import backgroundImg from "../assets/pexels-pixabay-534229.jpg";
 import React, { useState } from "react";
 import axios from "axios";
 import { Toast } from "react-bootstrap";
@@ -82,10 +81,7 @@ export default function ApproveLoan() {
           <Toast.Body>Error in submitting the form</Toast.Body>
         </Toast>
       </div>
-      <div
-        className="overflow-auto custom-background"
-        style={{ backgroundImage: `url(${backgroundImg})` }}
-      >
+      <div className="overflow-auto custom-background">
         <div className="container">
           <form className="row g-3" onSubmit={handleSubmit}>
             <div>

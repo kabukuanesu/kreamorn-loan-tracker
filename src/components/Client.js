@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import backgroundImg from "../assets/pexels-gdtography-911738.jpg";
-import Brand from "../assets/logo3.jpeg";
+import backgroundImg from "../assets/client.jpg";
+import Brand from "../assets/brand.jpeg";
 import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
@@ -58,10 +58,6 @@ export default function Client() {
       console.log("Error fetching data:", error);
     }
     setIsLoading(false);
-  };
-
-  const handleReview = () => {
-    document.getElementById("notFunded").checked = true;
   };
 
   const handleReject = () => {

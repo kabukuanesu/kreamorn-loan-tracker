@@ -1,6 +1,6 @@
 import "../css/style.css";
 import "../App.css";
-import Pic from "../assets/logo1.png";
+import Pic from "../assets/login.png";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Toast } from "react-bootstrap";
@@ -68,7 +68,7 @@ export default function AdminLogin() {
         <div className="row">
           <div className="colm-logo">
             <img src={Pic} />
-            <h2>Empowering Dreams, One Affordable Loan at a Time.</h2>
+            <h2>Let us lend you a helping hand.</h2>
           </div>
           <div className="colm-form">
             <div className="form-container">
@@ -87,15 +87,15 @@ export default function AdminLogin() {
               <button className="btn-login" onClick={handleLogin}>
                 Login
               </button>
-              <a href="#">Forgot password?</a>
+              <Link to="/">Forgot password?</Link>
               <Link to="/">
                 <button className="btn-new">Home</button>
               </Link>
             </div>
             <p>
-              <a href="#">
+              <Link to="/signup">
                 <b>Providing Loans</b>
-              </a>{" "}
+              </Link>{" "}
               To Unlock Opportunities & Empower Finances.
             </p>
           </div>
@@ -106,25 +106,25 @@ export default function AdminLogin() {
           <ul>
             <li>English (US)</li>
             <li>
-              <a href="#">Chinese</a>
+              <Link to="#">Chinese</Link>
             </li>
             <li>
-              <a href="#">Portuguese (Brazil)</a>
+              <Link to="#">Portuguese (Brazil)</Link>
             </li>
             <li>
-              <a href="#">Korean</a>
+              <Link to="#">Korean</Link>
             </li>
             <li>
-              <a href="#">Espanol</a>
+              <Link to="#">Espanol</Link>
             </li>
             <li>
-              <a href="#">Bahasa (Indonesia)</a>
+              <Link to="#">Bahasa (Indonesia)</Link>
             </li>
             <li>
-              <a href="#">Francais (France)</a>
+              <Link to="#">Francais (France)</Link>
             </li>
             <li>
-              <a href="#">Deutsch</a>
+              <Link to="#">Deutsch</Link>
             </li>
             <li>
               <button>+</button>

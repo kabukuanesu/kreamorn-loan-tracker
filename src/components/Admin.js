@@ -1,34 +1,36 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import Brand from "../assets/logo3.jpeg";
-import Signup from "./Signup";
-import Login from "./Login";
+import Brand from "../assets/brand.jpeg";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function Admin() {
   const [data, setData] = useState([]);
+  const [searchName, setSearchName] = useState("");
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    fetchData(searchName);
+  }, [searchName]);
 
-  const fetchData = async () => {
+  const fetchData = async (fullName = "") => {
     try {
-      const response = await axios.get(
-        "http://localhost:5032/api/PersonalDetail"
-      );
+      let url = "http://localhost:5032/api/PersonalDetail";
+      if (fullName !== "") {
+        url = `http://localhost:5032/api/PersonalDetail/GetByName/${fullName}`;
+      }
+      const response = await axios.get(url);
       setData(response.data);
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <div>
       <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href={Admin}>
+            <Link to="/admin" className="navbar-brand">
               <img
                 src={Brand}
                 alt="Logo"
@@ -37,7 +39,7 @@ export default function Admin() {
                 className="d-inline-block align-text-top"
               />
               ` Kreamorn Loan Tracker
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -75,12 +77,20 @@ export default function Admin() {
                   </Link>
                 </li>
               </ul>
-              <form className="d-flex" role="search">
+              <form
+                className="d-flex"
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  fetchData(searchName);
+                }}
+              >
                 <input
                   className="form-control me-2"
                   type="search"
                   placeholder="Enter Name To Search"
                   aria-label="Search"
+                  value={searchName}
+                  onChange={(e) => setSearchName(e.target.value)}
                 />
                 <button className="btn btn-outline-success" type="submit">
                   Search
