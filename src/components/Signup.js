@@ -105,7 +105,7 @@ export default function Signup() {
         return (
           <>
             <div>
-              <h3>
+              <h3 style={{ color: "hsl(0, 100%, 30%)", fontFamily: "verdane" }}>
                 <b>
                   <u>Personal Details</u>
                 </b>
@@ -114,7 +114,7 @@ export default function Signup() {
             <div>
               <br />
             </div>
-            <div className="col-8">
+            <div className="col-8" style={{ fontFamily: "arial" }}>
               <label htmlFor="fullName" className="form-label">
                 Full Name
               </label>
@@ -129,7 +129,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="title" className="form-label">
                 Title
               </label>
@@ -153,12 +153,12 @@ export default function Signup() {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="col-8">
+            <div className="col-8" style={{ fontFamily: "arial" }}>
               <label htmlFor="dateOfBirth" className="form-label">
                 Date Of Birth
               </label>
               <input
-                type="text"
+                type="date"
                 className="form-control"
                 id="dateOfBirth"
                 value={formData.dateOfBirth || ""}
@@ -167,7 +167,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="maritalStatus" className="form-label">
                 Marital Status
               </label>
@@ -188,7 +188,7 @@ export default function Signup() {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="col-8">
+            <div className="col-8" style={{ fontFamily: "arial" }}>
               <label htmlFor="address" className="form-label">
                 Physical Address
               </label>
@@ -203,7 +203,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="phoneNumber" className="form-label">
                 Phone Number
               </label>
@@ -218,7 +218,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="emailAddress" className="form-label">
                 Email Address
               </label>
@@ -233,7 +233,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="workNumber" className="form-label">
                 Work Number
               </label>
@@ -248,7 +248,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="nationalId" className="form-label">
                 National ID
               </label>
@@ -272,7 +272,7 @@ export default function Signup() {
         return (
           <>
             <div>
-              <h3>
+              <h3 style={{ fontFamily: "verdane", color: "hsl(0, 100%, 30%)" }}>
                 <b>
                   <u>Financial Details</u>
                 </b>
@@ -281,7 +281,7 @@ export default function Signup() {
             <div>
               <br />
             </div>
-            <div className="col-8">
+            <div className="col-8" style={{ fontFamily: "arial" }}>
               <label htmlFor="employer" className="form-label">
                 Employer
               </label>
@@ -296,7 +296,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="jobTitle" className="form-label">
                 Job Title
               </label>
@@ -311,7 +311,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="wageFrequency" className="form-label">
                 Wage Frequency
               </label>
@@ -334,7 +334,7 @@ export default function Signup() {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="monthlyIncome" className="form-label">
                 Monthly Income
               </label>
@@ -349,7 +349,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="annualSalary" className="form-label">
                 Annual Salary
               </label>
@@ -364,7 +364,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="expense" className="form-label">
                 Expenses
               </label>
@@ -389,7 +389,7 @@ export default function Signup() {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="benefit" className="form-label">
                 Benefits
               </label>
@@ -416,7 +416,7 @@ export default function Signup() {
                 <option value="Other">Other</option>
               </select>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="loanAmount" className="form-label">
                 Loan Amount
               </label>
@@ -431,7 +431,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="loanTenure" className="form-label">
                 Loan Tenure
               </label>
@@ -455,7 +455,7 @@ export default function Signup() {
         return (
           <>
             <div>
-              <h3>
+              <h3 style={{ fontFamily: "verdane", color: "hsl(0, 100%, 30%)" }}>
                 <b>
                   <u>Proof Documents</u>
                 </b>
@@ -464,7 +464,7 @@ export default function Signup() {
             <div>
               <br />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="proofOfIdentity" className="form-label">
                 Proof Of Identity
               </label>
@@ -472,16 +472,16 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfIdentity"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    proofOfIdentity: e.target.files[0],
-                  })
-                }
+                // onChange={(e) =>
+                // setFormData({
+                // ...formData,
+                // proofOfIdentity: e.target.files[0],
+                // })
+                // }
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="proofOfResidence" className="form-label">
                 Proof Of Residence
               </label>
@@ -489,16 +489,16 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfResidence"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    proofOfResidence: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //proofOfResidence: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="bankStatement" className="form-label">
                 Bank Statements
               </label>
@@ -506,13 +506,13 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="bankStatement"
-                onChange={(e) =>
-                  setFormData({ ...formData, bankStatement: e.target.files[0] })
-                }
+                //onChange={(e) =>
+                //setFormData({ ...formData, bankStatement: e.target.files[0] })
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="proofOfIncome" className="form-label">
                 Proof Of Income
               </label>
@@ -520,13 +520,13 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="proofOfIncome"
-                onChange={(e) =>
-                  setFormData({ ...formData, proofOfIncome: e.target.files[0] })
-                }
+                //onChange={(e) =>
+                //setFormData({ ...formData, proofOfIncome: e.target.files[0] })
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="benefitDocument" className="form-label">
                 Benefits Documents
               </label>
@@ -534,16 +534,16 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="benefitDocument"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    benefitDocument: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //benefitDocument: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="employmentVerification" className="form-label">
                 Employment Verification
               </label>
@@ -551,16 +551,16 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="employmentVerification"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    employmentVerification: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //employmentVerification: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="collateralDocument" className="form-label">
                 Collateral Documents
               </label>
@@ -568,16 +568,16 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="collateralDocument"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    collateralDocument: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //collateralDocument: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="otherDocument" className="form-label">
                 Other Documents
               </label>
@@ -585,9 +585,9 @@ export default function Signup() {
                 className="form-control"
                 type="file"
                 id="otherDocument"
-                onChange={(e) =>
-                  setFormData({ ...formData, otherDocument: e.target.files[0] })
-                }
+                //onChange={(e) =>
+                  //setFormData({ ...formData, otherDocument: e.target.files[0] })
+                //}
                 multiple
               />
             </div>
@@ -600,13 +600,13 @@ export default function Signup() {
         return (
           <>
             <div>
-              <h4>
+              <h4 style={{ fontFamily: "verdane", color: "hsl(0, 100%, 30%)" }}>
                 <b>
                   <u>Set Password</u>
                 </b>
               </h4>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="newPassword" className="form-label">
                 New Password
               </label>
@@ -621,7 +621,7 @@ export default function Signup() {
                 }
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="confirmPassword" className="form-label">
                 Confirm Password
               </label>
@@ -650,7 +650,7 @@ export default function Signup() {
                 </h6>
               </div>
             )}
-            <div className="col-12">
+            <div className="col-12" style={{ fontFamily: "helvetica" }}>
               <div className="form-check">
                 <input
                   className="form-check-input"

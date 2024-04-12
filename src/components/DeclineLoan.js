@@ -88,7 +88,7 @@ export default function ApproveLoan() {
               <br />
             </div>
             <div>
-              <h3>
+              <h3 style={{ color: "hsl(0, 100%, 30%)", fontFamily: "verdana" }}>
                 <b>
                   <u>Decline Loan</u>
                 </b>
@@ -97,7 +97,7 @@ export default function ApproveLoan() {
             <div>
               <br />
             </div>
-            <div className="col-6">
+            <div className="col-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="applicationID" className="form-label">
                 Application ID
               </label>
@@ -112,7 +112,7 @@ export default function ApproveLoan() {
                 }
               />
             </div>
-            <div className="col-6">
+            <div className="col-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="fullName" className="form-label">
                 Full Name
               </label>
@@ -127,7 +127,7 @@ export default function ApproveLoan() {
                 }
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="emailAddress" className="form-label">
                 Email Address
               </label>
@@ -142,7 +142,7 @@ export default function ApproveLoan() {
                 }
               />
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6" style={{ fontFamily: "arial" }}>
               <label htmlFor="nationalId" className="form-label">
                 National ID
               </label>
@@ -158,13 +158,15 @@ export default function ApproveLoan() {
               />
             </div>
             <div>
-              <h5>
+              <h5
+                style={{ color: "hsl(0, 100%, 30%)", fontFamily: "helvetica" }}
+              >
                 <b>
                   <u>Upload Loan Documents</u>
                 </b>
               </h5>
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="loanApprovalLetter" className="form-label">
                 Loan Approval Letter
               </label>
@@ -172,16 +174,16 @@ export default function ApproveLoan() {
                 type="file"
                 className="form-control"
                 id="loanApprovalLetter"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    loanApprovalLetter: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //loanApprovalLetter: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="disclosureStatements" className="form-label">
                 Disclosure Statements
               </label>
@@ -189,16 +191,16 @@ export default function ApproveLoan() {
                 type="file"
                 className="form-control"
                 id="disclosureStatements"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    disclosureStatements: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //disclosureStatements: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="repaymentSchedule" className="form-label">
                 Repayment Schedule
               </label>
@@ -206,16 +208,16 @@ export default function ApproveLoan() {
                 type="file"
                 className="form-control"
                 id="repaymentSchedule"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    repaymentSchedule: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //repaymentSchedule: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="contactInformation" className="form-label">
                 Contact Information
               </label>
@@ -223,16 +225,16 @@ export default function ApproveLoan() {
                 type="file"
                 className="form-control"
                 id="contactInformation"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    contactInformation: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //contactInformation: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="declinationLetter" className="form-label">
                 DeclinationLetter
               </label>
@@ -240,16 +242,16 @@ export default function ApproveLoan() {
                 type="file"
                 className="form-control"
                 id="declinationLetter"
-                onChange={(e) =>
-                  setFormData({
-                    ...formData,
-                    declinationLetter: e.target.files[0],
-                  })
-                }
+                //onChange={(e) =>
+                //setFormData({
+                //...formData,
+                //declinationLetter: e.target.files[0],
+                //})
+                //}
                 multiple
               />
             </div>
-            <div className="col-md-4">
+            <div className="col-md-4" style={{ fontFamily: "arial" }}>
               <label htmlFor="approved" className="form-label">
                 Decline Loan
               </label>
@@ -271,7 +273,10 @@ export default function ApproveLoan() {
             <div>
               <br />
             </div>
-            <div className="col-12">
+            <div
+              className="col-12"
+              style={{ fontFamily: "helvetica", color: "hsl(0, 100%, 30%)" }}
+            >
               <div className="form-check">
                 <input
                   className="form-check-input"

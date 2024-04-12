@@ -81,7 +81,11 @@ export default function Dashboard() {
                   </Link>
                 </li>
               </ul>
-              <form className="d-flex" role="search">
+              <form
+                className="d-flex"
+                role="search"
+                style={{ fontFamily: "verdana" }}
+              >
                 <input
                   className="form-control me-2"
                   type="search"
@@ -153,33 +157,49 @@ export default function Dashboard() {
                 <div className="row feature-blocks bg-gray justify-content-between">
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-book mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Get Involved</h3>
-                    <div>
+                    <h3
+                      className="mb-xl-4 mb-lg-3 mb-4"
+                      style={{
+                        color: "hsl(0, 100%, 30%)",
+                        fontFamily: "verdana",
+                      }}
+                    >
+                      Get Involved
+                    </h3>
+                    <p style={{ fontFamily: "arial" }}>
                       <ul>
-                        <li style={{ fontSize: "13px" }}>
+                        <li style={{ fontSize: "13px", color: "black" }}>
                           Click on <b>Loan Application</b> to apply for a loan
                           with us.
                         </li>
-                        <li style={{ fontSize: "13px" }}>
+                        <li style={{ fontSize: "13px", color: "black" }}>
                           Track your loan progress by clicking on the{" "}
                           <b>Track Loan</b> link above.
                         </li>
-                        <li style={{ fontSize: "13px" }}>
+                        <li style={{ fontSize: "13px", color: "black" }}>
                           <b>Login</b> to view your loan progress.
                         </li>
-                        <li style={{ fontSize: "13px" }}>
+                        <li style={{ fontSize: "13px", color: "black" }}>
                           <b>Signup</b> to apply a loan with us and enjoy our
                           exclusive benefits.
                         </li>
                       </ul>
-                    </div>
+                    </p>
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-blackboard mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Mission</h3>
-                    <p>
+                    <h3
+                      className="mb-xl-4 mb-lg-3 mb-4"
+                      style={{
+                        color: "hsl(0, 100%, 30%)",
+                        fontFamily: "verdana",
+                      }}
+                    >
+                      Mission
+                    </h3>
+                    <p style={{ fontFamily: "arial" }}>
                       <ul>
-                        <li style={{ fontSize: "15px" }}>
+                        <li style={{ fontSize: "15px", color: "black" }}>
                           To attain maximum stakeholder value through offering
                           innovative financial solutions anchored on mutual
                           partnerships
@@ -189,10 +209,18 @@ export default function Dashboard() {
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-agenda mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Vision</h3>
-                    <p>
+                    <h3
+                      className="mb-xl-4 mb-lg-3 mb-4"
+                      style={{
+                        color: "hsl(0, 100%, 30%)",
+                        fontFamily: "verdana",
+                      }}
+                    >
+                      Vision
+                    </h3>
+                    <p style={{ fontFamily: "arial" }}>
                       <ul>
-                        <li style={{ fontSize: "15px" }}>
+                        <li style={{ fontSize: "15px", color: "black" }}>
                           To be preffered global financial solutions provider
                         </li>
                       </ul>
@@ -200,23 +228,31 @@ export default function Dashboard() {
                   </div>
                   <div className="col-sm-6 col-xl-5 mb-xl-5 mb-lg-3 mb-4 text-center text-sm-left">
                     <i className="ti-write mb-xl-4 mb-lg-3 mb-4 feature-icon"></i>
-                    <h3 className="mb-xl-4 mb-lg-3 mb-4">Values</h3>
-                    <p>
+                    <h3
+                      className="mb-xl-4 mb-lg-3 mb-4"
+                      style={{
+                        color: "hsl(0, 100%, 30%)",
+                        fontFamily: "verdana",
+                      }}
+                    >
+                      Values
+                    </h3>
+                    <p style={{ fontFamily: "arial" }}>
                       <ul>
-                        <li style={{ fontSize: "14px" }}>
+                        <li style={{ fontSize: "14px", color: "black" }}>
                           Dedicated to achieve the Kreamorn dream
                         </li>
-                        <li style={{ fontSize: "14px" }}>
+                        <li style={{ fontSize: "14px", color: "black" }}>
                           Honest & upright in all dealings
                         </li>
-                        <li style={{ fontSize: "14px" }}>
+                        <li style={{ fontSize: "14px", color: "black" }}>
                           High competence & skill to become the authorities in
                           the MFI industry
                         </li>
-                        <li style={{ fontSize: "14px" }}>
+                        <li style={{ fontSize: "14px", color: "black" }}>
                           Oneness in our diversity to achieve a common goal
                         </li>
-                        <li style={{ fontSize: "14px" }}>
+                        <li style={{ fontSize: "14px", color: "black" }}>
                           Eminence, exceeding expectations
                         </li>
                       </ul>

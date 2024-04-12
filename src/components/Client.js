@@ -138,7 +138,7 @@ export default function Client() {
                   </Link>
                 </li>
               </ul>
-              <form className="d-flex" role="search" onSubmit={handleSubmit}>
+              <form className="d-flex" role="search" onSubmit={handleSubmit} style={{fontFamily: "verdana"}}>
                 <input
                   className="form-control me-2"
                   type="search"
@@ -159,7 +159,13 @@ export default function Client() {
         <br />
       </div>
       <div>
-        <h1 style={{ textAlign: "center" }}>
+        <h1
+          style={{
+            textAlign: "center",
+            color: "hsl(0, 100%, 30%)",
+            fontFamily: "verdana",
+          }}
+        >
           Welcome To Kreamorn Loan Tracker
         </h1>
       </div>
@@ -167,7 +173,13 @@ export default function Client() {
         <br />
         <br />
       </div>
-      <div style={{ textAlign: "center" }}>
+      <div
+        style={{
+          textAlign: "center",
+          color: "hsl(0, 100%, 30%)",
+          fontFamily: "verdane",
+        }}
+      >
         <h3> {fullName} Application Status</h3>
       </div>
       <div>
@@ -329,6 +341,7 @@ export default function Client() {
           textAlign: "center",
           justifyContent: "center",
           justifyItems: "center",
+          fontFamily: "arial",
         }}
       >
         <input className="form-check-input" type="checkbox" id="gridCheck" />
@@ -343,7 +356,7 @@ export default function Client() {
           justifyItems: "center",
         }}
       >
-        <h6>
+        <h6 style={{ color: "hsl(0, 100%, 30%)", fontFamily: "helvetica" }}>
           After you review the above documents, please accept or reject the
           approved loan.
         </h6>

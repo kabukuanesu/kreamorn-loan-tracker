@@ -66,9 +66,11 @@ export default function Login() {
         <div className="row">
           <div className="colm-logo">
             <img src={logo} />
-            <h2>Let us lend you a helping hand.</h2>
+            <h2 style={{ fontFamily: "helvetica", color: "hsl(0, 100%, 30%)" }}>
+              Let us lend you a helping hand.
+            </h2>
           </div>
-          <div className="colm-form">
+          <div className="colm-form" style={{ fontFamily: "helvetica" }}>
             <div className="form-container">
               <input
                 type="text"
@@ -92,7 +94,7 @@ export default function Login() {
                 <button className="btn-new">Apply For A New Loan</button>
               </Link>
             </div>
-            <p>
+            <p style={{ fontFamily: "helvetica" }}>
               <Link to="/signup">
                 <b>Apply Now</b>
               </Link>{" "}

@@ -3,6 +3,7 @@ import Brand from "../assets/brand.jpeg";
 import { Link } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import backgroundImg from "../assets/client.jpg";
 
 export default function Admin() {
   const [data, setData] = useState([]);
@@ -26,7 +27,10 @@ export default function Admin() {
   };
 
   return (
-    <div>
+    <div
+      className="overflow-auto custom-background"
+      style={{ backgroundImage: `url(${backgroundImg})` }}
+    >
       <div>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
@@ -83,6 +87,7 @@ export default function Admin() {
                   e.preventDefault();
                   fetchData(searchName);
                 }}
+                style={{ fontFamily: "helvetica" }}
               >
                 <input
                   className="form-control me-2"
@@ -100,7 +105,7 @@ export default function Admin() {
           </div>
         </nav>
       </div>
-      <div>
+      <div style={{ fontFamily: "arial" }}>
         <div style={{ justifyContent: "center" }}>
           <div className="container">
             <div
